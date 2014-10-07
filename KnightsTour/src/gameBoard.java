@@ -33,10 +33,18 @@ public class gameBoard {
 	public int getValue(int x, int y) {
 		return gameBoard[x][y];
 	}
+	
+	public void reset() {
+		for (int i = 0; i < gameBoard.length; i++) {
+			for (int j = 0; j < gameBoard[0].length; j++) {
+				gameBoard[i][j] = 0;
+			}
+		}
+	}
 
 	public void drawBoard() {
-		for (int i = 0; i < 8; i++) {
-			for (int j = 0; j < 8; j++) {
+		for (int i = 0; i < gameBoard.length; i++) {
+			for (int j = 0; j < gameBoard[0].length; j++) {
 				System.out.printf("%2d ", gameBoard[i][j]);
 			}
 			System.out.println();
@@ -47,8 +55,8 @@ public class gameBoard {
 	public void popUpOutput(int moves, long simulations) {
 
 		StringBuilder sb = new StringBuilder();
-		for (int i = 0; i < 8; i++) {
-			for (int j = 0; j < 8; j++) {
+		for (int i = 0; i < gameBoard.length; i++) {
+			for (int j = 0; j < gameBoard[0].length; j++) {
 				if (gameBoard[i][j] < 10) {
 					sb.append(0);
 				}
@@ -70,8 +78,8 @@ public class gameBoard {
 		
 		sb.append(String.format("Numbered Moves Board\n"));
 		
-		for (int i = 0; i < 8; i++) {
-			for (int j = 0; j < 8; j++) {
+		for (int i = 0; i < gameBoard.length; i++) {
+			for (int j = 0; j < gameBoard[0].length; j++) {
 				if (gameBoard[i][j] < 10) {
 					sb.append(0);
 				}
@@ -93,8 +101,8 @@ public class gameBoard {
 				{ 4, 6, 8, 8, 8, 8, 6, 4 }, { 3, 4, 6, 6, 6, 6, 4, 3 },
 				{ 2, 3, 4, 4, 4, 4, 3, 2 } };
 		
-		for (int i = 0; i < 8; i++) {
-			for (int j = 0; j < 8; j++) {
+		for (int i = 0; i < gameBoard.length; i++) {
+			for (int j = 0; j < gameBoard[0].length; j++) {
 				gameBoard[i][j] = temp[i][j];
 			}
 		}

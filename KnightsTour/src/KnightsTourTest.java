@@ -1,3 +1,17 @@
+/*
+ * 
+ * Knights Tour.
+ * This is a program which attempts to solve a puzzle, "Can you move a knight (chess piece) from a randomly allocated start
+ * position to every single square on a chess board, without landing on the same square twice?"
+ * 
+ *There are two implementations of the program, the first being brute force, and the second, using a smart algorithm. 
+ *
+ *Written by Joe Duffin.
+ */
+
+
+
+
 import javax.swing.JOptionPane;
 
 public class KnightsTourTest {
@@ -20,11 +34,12 @@ public class KnightsTourTest {
 
 		case 1: //case one is random pig ignorance, keep trying till you get all the squares,
 			JOptionPane.showMessageDialog(null, "This will take a while...\n");
+			myGameBoard = new gameBoard();
 			while (count != 65) {
 				simulations++;
 				if (myMoves.checkAllMoves(myGameBoard) == false) {
 					count = 1;
-					myGameBoard = new gameBoard();
+					myGameBoard.reset();
 					myMoves.setRandomStart(myGameBoard, count++);
 
 					continue;
@@ -45,20 +60,22 @@ public class KnightsTourTest {
 		case 2: //case 2, allocates weight to the easy squares to get to, eg, the centre, the algorithm gets the tough squares done as early as possible, eg, corners
 			gameBoard numberedMoves = new gameBoard();
 			numberedMoves.buildNumberedMoves();
-			//numberedMoves.drawBoard(); //uncomment this if you wanna see the smart board placement allocations,
-			numberedMoves.popUpOutput(); //uncomment this if you wanna see the smart board placement allocations,
+			myGameBoard = new gameBoard();
+			//numberedMoves.drawBoard(); //uncomment this if you wanna see the smart board placement allocations on cmd line,
+			//numberedMoves.popUpOutput(); //uncomment this if you wanna see the smart board placement allocations in JOptionPane,
 
+			
 			while (count != 65) {
 				simulations++;
 				if (myMoves.checkAllMoves(myGameBoard) == false) {
 					count = 1;
-					myGameBoard = new gameBoard();
+					myGameBoard.reset();
 					myMoves.setRandomStart(myGameBoard, count++);
 
-					continue;
+					continue; //start again!!!!
 				}
 				myMoves.makeCalcMove(myGameBoard, numberedMoves, count++);
-				//myGameBoard.drawBoard();
+				//myGameBoard.drawBoard(); //drawing every attempt seriously increases computation time.
 			}
 
 			myGameBoard.popUpOutput(count, simulations);

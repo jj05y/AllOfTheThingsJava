@@ -2,7 +2,10 @@ import java.util.Random;
 
 public class GameMoves {
 
-	int horizontal[] = { 2, 1, -1, -2, -2, -1, 1, 2};
+	int horizontal[] = { 2, 1, -1, -2, -2, -1, 1, 2 }; // a possible move is a
+														// horizontal and
+														// vertical move,
+														// matched by its index
 	int vertical[] = { -1, -2, -2, -1, 1, 2, 2, 1 };
 	Random rand = new Random();
 
@@ -108,16 +111,16 @@ public class GameMoves {
 
 			check = checkForMove(myGameBoard, x, y);
 			if (check == true) {
-				
+
 				numberedMovesValue = numberedMoves.getValue(x, y);
-				if ( numberedMovesValue < best) { // see what
-															// value is
-															// at
-															// that
-															// coordinate
+				if (numberedMovesValue < best) { // see what
+													// value is
+													// at
+													// that
+													// coordinate
 					best = numberedMovesValue; // this is then a
-															// marker of lowest
-															// possible move,
+												// marker of lowest
+												// possible move,
 				}
 
 			}
