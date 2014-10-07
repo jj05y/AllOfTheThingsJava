@@ -1,4 +1,4 @@
-This my public repo where I'll upload code i'd written!
+This my public repo where I'll upload java code i'd written!
 All feedback/ammendments very welcome.
 
 
