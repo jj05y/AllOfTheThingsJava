@@ -52,7 +52,7 @@ public class gameBoard {
 		System.out.println();
 	}
 
-	public void popUpOutput(int moves, long simulations) {
+	public void popUpOutput(int moves, long simulations, double totalTime) {
 
 		StringBuilder sb = new StringBuilder();
 		for (int i = 0; i < gameBoard.length; i++) {
@@ -68,6 +68,7 @@ public class gameBoard {
 
 		sb.append(String.format("\n%d Moves, %d simulations\n", moves - 1,
 				simulations));
+		sb.append(String.format("\n Total Time: %.4f seconds.", totalTime));
 
 		JOptionPane.showMessageDialog(null, sb.toString());
 	}

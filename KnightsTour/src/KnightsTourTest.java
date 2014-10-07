@@ -22,6 +22,8 @@ public class KnightsTourTest {
 		GameMoves myMoves = new GameMoves();
 		int count = 1;
 		long simulations = 0;
+		ATimer myTimer = new ATimer();
+		
 
 		myMoves.setRandomStart(myGameBoard, count);
 		count++;
@@ -35,6 +37,7 @@ public class KnightsTourTest {
 		case 1: //case one is random pig ignorance, keep trying till you get all the squares,
 			JOptionPane.showMessageDialog(null, "This will take a while...\n");
 			myGameBoard = new gameBoard();
+			myTimer.startTimer();
 			while (count != 65) {
 				simulations++;
 				if (myMoves.checkAllMoves(myGameBoard) == false) {
@@ -48,12 +51,13 @@ public class KnightsTourTest {
 				// myGameBoard.drawBoard();
 
 			}
-
+			myTimer.stopTimer();
 			myGameBoard.drawBoard();
 
-			System.out.printf("\n%d Moves, %d simulations\n", count - 1,
-					simulations);
-			myGameBoard.popUpOutput(count, simulations);
+			//System.out.printf("\n%d Moves, %d simulations\n", count - 1,
+			//		simulations);
+			myGameBoard.popUpOutput(count, simulations, myTimer.getTime());
+			
 
 			break;
 
@@ -63,7 +67,8 @@ public class KnightsTourTest {
 			myGameBoard = new gameBoard();
 			//numberedMoves.drawBoard(); //uncomment this if you wanna see the smart board placement allocations on cmd line,
 			//numberedMoves.popUpOutput(); //uncomment this if you wanna see the smart board placement allocations in JOptionPane,
-
+			
+			myTimer.startTimer();
 			
 			while (count != 65) {
 				simulations++;
@@ -78,8 +83,9 @@ public class KnightsTourTest {
 				//myGameBoard.drawBoard(); //drawing every attempt seriously increases computation time.
 			}
 
-			myGameBoard.popUpOutput(count, simulations);
-			myGameBoard.drawBoard();
+			myTimer.stopTimer();
+			myGameBoard.popUpOutput(count, simulations, myTimer.getTime());
+			//myGameBoard.drawBoard(); //unomment for cmd line output
 
 			break;
 
