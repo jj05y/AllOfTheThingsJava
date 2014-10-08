@@ -9,17 +9,18 @@ public class SolveMethods {
 
 		for (int i = 0; i < myArray.getLength(); i++) {
 			for (int j = i + 1; j < myArray.getLength(); j++) {
-				//System.out.println("NEXT");
+				System.out.println("NEXT");
 				for (int k = i; k <= j; k++) {
 					if (i == 0 && j == 1) { // first iteration, set min segment
 											// product
-						minSegProd = currSegProd = (myArray.getValue(i) * myArray.getValue(j));
+						minSegProd = currSegProd = (myArray.getValue(i) * myArray
+								.getValue(j));
 					} else {
 						currSegProd *= (long) myArray.getValue(k);
-						//System.out.println(currSegProd);
-						if (currSegProd > minSegProd) {
-							break;
-						}
+						System.out.println(currSegProd);
+						// if (currSegProd > minSegProd) {
+						// break;
+						// }
 					}
 				}
 				if (currSegProd <= minSegProd) {
@@ -33,8 +34,33 @@ public class SolveMethods {
 		}
 	}
 
-	public void smart() {
-		// TODO
+	public void smart(OneDArray myArray) {
+
+		int negCount = 0;
+		boolean oddNegs = false;
+
+		for (int i = 0; i < myArray.getLength(); i++) {
+			if (myArray.getValue(i) < 0) {
+				negCount++;
+			}
+
+			if (negCount % 2 != 0) {
+				oddNegs = true;
+			}
+
+		}
+
+		if (oddNegs == true) {
+			segStart = 0;
+			segFinish = myArray.getLength() - 1;
+		}
+	}
+	
+	public void reset() {
+		minSegProd = 0;
+		currSegProd = 1;
+		segStart = 0;
+		segFinish = 0;
 	}
 
 	public int getSegStart() {
