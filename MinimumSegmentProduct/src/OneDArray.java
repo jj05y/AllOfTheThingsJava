@@ -9,7 +9,7 @@ public class OneDArray {
 	public OneDArray() {
 		Random rand = new Random();
 		for (int i = 0; i < intArray.length; i++) {
-			intArray[i] = (rand.nextInt(9) + 1)
+			intArray[i] = (rand.nextInt(9))
 					* (int) Math.pow(-1, rand.nextInt(9));
 		}
 	}
@@ -63,7 +63,7 @@ public class OneDArray {
 			}
 
 		}
-		sb.append("\n\n" + message + "\n Total time: " + time);
+		sb.append("\n\n" + message + "\n Total time: " + time + " seconds.");
 		JOptionPane.showMessageDialog(null, sb);
 	}
 

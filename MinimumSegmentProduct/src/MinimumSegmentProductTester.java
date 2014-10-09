@@ -16,11 +16,11 @@ public class MinimumSegmentProductTester {
 		
 		mySolves.reset();
 		
-		myTimer.startTimer();
-		mySolves.smart(myArray);
-		myTimer.stopTimer();
+		//myTimer.startTimer();
+		//mySolves.smart(myArray);
+		//myTimer.stopTimer();
 		
-		myArray.showArray("Smart algorithm\nSegment with minium product", mySolves.getSegStart(), mySolves.getSegFinish(), myTimer.getTime());
+		//myArray.showArray("Smart algorithm\nSegment with minium product", mySolves.getSegStart(), mySolves.getSegFinish(), myTimer.getTime());
 				
 	}
 }

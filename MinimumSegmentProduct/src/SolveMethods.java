@@ -34,28 +34,40 @@ public class SolveMethods {
 		}
 	}
 
-	public void smart(OneDArray myArray) {
+	public void smart(OneDArray myArray) { // this is bad, needs re writing
 
-		int negCount = 0;
-		boolean oddNegs = false;
+		boolean doneNimp = false;
+		long nimp = 1; // numbers from the front
+		int nimpCutOff = 0;
+		boolean doneNump = false;
+		long nump = 1; // numbers from the back
+		int numpCutOff = 0;
 
 		for (int i = 0; i < myArray.getLength(); i++) {
-			if (myArray.getValue(i) < 0) {
-				negCount++;
+
+			if (!(doneNimp)) {
+				if (myArray.getValue(i) <= 0) {
+					doneNimp = true;
+					nimpCutOff = i;
+				}
+				nimp *= myArray.getValue(i);
 			}
 
-			if (negCount % 2 != 0) {
-				oddNegs = true;
+			if (!(doneNump)) {
+				if (myArray.getValue(myArray.getLength() - 1 - i) <= 0) {
+					doneNump = true;
+					numpCutOff = i;
+				}
+				nump *= myArray.getValue(i);
 			}
 
 		}
 
-		if (oddNegs == true) {
-			segStart = 0;
-			segFinish = myArray.getLength() - 1;
-		}
+		segStart = nimpCutOff;
+		segFinish = numpCutOff;
+
 	}
-	
+
 	public void reset() {
 		minSegProd = 0;
 		currSegProd = 1;
