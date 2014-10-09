@@ -39,27 +39,16 @@ public class OneDArray {
 			if ((i % 10) == 0 && i != 0) {
 				sb.append("\n");
 			}
-
 			if (i == a) {
-				if (intArray[i] >= 0) {
-					sb.append(String.format("[%03d  ", intArray[i]));
-				} else {
-					sb.append(String.format("[%04d ", intArray[i]));
-				}
-			} else if (i == b) {
-				if (intArray[i] >= 0) {
-					sb.append(String.format("%03d]  ", intArray[i]));
-				} else {
-					sb.append(String.format("%04d] ", intArray[i]));
-				}
-				;
+				sb.append("[ ");
+			}
+			if (intArray[i] >= 0) {
+				sb.append(String.format("%03d  ", intArray[i]));
 			} else {
-				if (intArray[i] >= 0) {
-					sb.append(String.format("%03d  ", intArray[i]));
-				} else {
-					sb.append(String.format("%04d ", intArray[i]));
-				}
-				;
+				sb.append(String.format("%04d ", intArray[i]));
+			}
+			if (i == b) {
+				sb.append("] ");
 			}
 
 		}

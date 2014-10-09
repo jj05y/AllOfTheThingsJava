@@ -8,22 +8,20 @@ public class SolveMethods {
 	public void bruteForce(OneDArray myArray) {
 
 		for (int i = 0; i < myArray.getLength(); i++) {
-			for (int j = i + 1; j < myArray.getLength(); j++) {
+			for (int j = i; j < myArray.getLength(); j++) {
 				System.out.println("NEXT");
 				for (int k = i; k <= j; k++) {
-					if (i == 0 && j == 1) { // first iteration, set min segment
+					if (i == 0 && j == 0) { // first iteration, set min segment
 											// product
-						minSegProd = currSegProd = (myArray.getValue(i) * myArray
-								.getValue(j));
+						minSegProd = currSegProd = myArray.getValue(i);
+						segStart = i;
+						segFinish = j;
 					} else {
 						currSegProd *= (long) myArray.getValue(k);
 						System.out.println(currSegProd);
-						// if (currSegProd > minSegProd) {
-						// break;
-						// }
 					}
 				}
-				if (currSegProd <= minSegProd) {
+				if (currSegProd < minSegProd) {
 					minSegProd = currSegProd;
 					segStart = i;
 					segFinish = j;
@@ -36,35 +34,15 @@ public class SolveMethods {
 
 	public void smart(OneDArray myArray) { // this is bad, needs re writing
 
-		boolean doneNimp = false;
-		long nimp = 1; // numbers from the front
-		int nimpCutOff = 0;
-		boolean doneNump = false;
-		long nump = 1; // numbers from the back
-		int numpCutOff = 0;
-
-		for (int i = 0; i < myArray.getLength(); i++) {
-
-			if (!(doneNimp)) {
-				if (myArray.getValue(i) <= 0) {
-					doneNimp = true;
-					nimpCutOff = i;
-				}
-				nimp *= myArray.getValue(i);
-			}
-
-			if (!(doneNump)) {
-				if (myArray.getValue(myArray.getLength() - 1 - i) <= 0) {
-					doneNump = true;
-					numpCutOff = i;
-				}
-				nump *= myArray.getValue(i);
-			}
-
-		}
-
-		segStart = nimpCutOff;
-		segFinish = numpCutOff;
+		/*
+		 * Criteria: Greatest odd number of negative ints and neighbouring
+		 * positve ints between either: two zeros, a zero and the start a zero
+		 * and the end
+		 * 
+		 * unless, no negative ints, in which case; any segment containing a
+		 * zero or the smallest element if no zeros
+		 */
+		// TODO
 
 	}
 
