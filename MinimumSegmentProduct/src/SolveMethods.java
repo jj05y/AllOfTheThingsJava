@@ -9,7 +9,7 @@ public class SolveMethods {
 
 		for (int i = 0; i < myArray.getLength(); i++) {
 			for (int j = i; j < myArray.getLength(); j++) {
-				System.out.println("NEXT");
+				//System.out.println("NEXT");
 				for (int k = i; k <= j; k++) {
 					if (i == 0 && j == 0) { // first iteration, set min segment
 											// product
@@ -18,7 +18,7 @@ public class SolveMethods {
 						segFinish = j;
 					} else {
 						currSegProd *= (long) myArray.getValue(k);
-						System.out.println(currSegProd);
+						//System.out.println(currSegProd);
 					}
 				}
 				if (currSegProd < minSegProd) {
