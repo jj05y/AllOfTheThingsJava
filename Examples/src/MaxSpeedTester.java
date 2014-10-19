@@ -13,7 +13,8 @@ public class MaxSpeedTester {
 	public SpeedTestable whichIsFaster() {
 		if (thing1.getMaxSpeed() < thing2.getMaxSpeed()) {
 			return thing2;
-		} else
+		} else {
 			return thing1;
+		}
 	}
 }
