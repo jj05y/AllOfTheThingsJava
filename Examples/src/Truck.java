@@ -12,7 +12,7 @@ public class Truck extends Vehical implements SpeedTestable {
 				
 	}
 	
-	public int getSeatingCapacity() {
+	public int getTowCapacity() {
 		return towCapacity;
 	}
 	
