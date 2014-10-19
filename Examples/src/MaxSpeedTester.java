@@ -1,3 +1,5 @@
+//this is a generic class as it has variables that can be of different types. it can deal with all sorts of 
+//vehicals
 public class MaxSpeedTester {
 
 	SpeedTestable thing1;

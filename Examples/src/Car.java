@@ -1,4 +1,5 @@
-
+//the is a subclass of vehicle as it extends it, it is also speed testable as it implements 
+//speed testable, this means it MUST have all methods declared in SpeedTestable
 public class Car extends Vehical implements SpeedTestable{
 
 	private int seatingCapacity;
@@ -14,7 +15,7 @@ public class Car extends Vehical implements SpeedTestable{
 		return seatingCapacity;
 	}
 	
-	public String toString(){
+	public String toString(){ //this is called implicitly when this object is put where a string is expected
 		return ("Car max speed: " + maxSpeed);
 	}
 }
