@@ -1,5 +1,6 @@
 //the is a subclass of vehicle as it extends it, it is also speed testable as it implements 
 //speed testable, this means it MUST have all methods declared in SpeedTestable
+//getMaxspeed is declared in the superclass.
 public class Car extends Vehical implements SpeedTestable{
 
 	private int seatingCapacity;
