@@ -5,25 +5,24 @@ public class MinimumSegmentProductTester {
 		SolveMethods mySolves = new SolveMethods();
 		ATimer myTimer = new ATimer();
 
-		// myArray.showArray("Integer array");
-		for (int i = 0; i < 5; i++) {
-			myArray = new OneDArray();
-			myTimer.startTimer();
-			mySolves.bruteForce(myArray);
-			myTimer.stopTimer();
+		myArray.showArray("Integer array");
+		myArray = new OneDArray();
+		myTimer.startTimer();
+		mySolves.bruteForce(myArray);
+		myTimer.stopTimer();
 
-			myArray.showArray("Brute Force\nSegment with minimum product",
-					mySolves.getSegStart(), mySolves.getSegFinish(),
-					myTimer.getTime());
+		myArray.showArray("Brute Force\nSegment with minimum product",
+				mySolves.getSegStart(), mySolves.getSegFinish(),
+				myTimer.getTime(), mySolves.getMinSegProd());
 
-			mySolves.reset();
-		}
-		// myTimer.startTimer();
-		// mySolves.smart(myArray);
-		// myTimer.stopTimer();
+		mySolves.reset();
 
-		// myArray.showArray("Smart algorithm\nSegment with minium product",
-		// mySolves.getSegStart(), mySolves.getSegFinish(), myTimer.getTime());
+		myTimer.startTimer();
+		mySolves.smart(myArray);
+		myTimer.stopTimer();
+
+		myArray.showArray("Minimum Segment Product is: "
+				+ mySolves.getMinSegProd());
 
 	}
 }

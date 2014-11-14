@@ -9,7 +9,7 @@ public class SolveMethods {
 
 		for (int i = 0; i < myArray.getLength(); i++) {
 			for (int j = i; j < myArray.getLength(); j++) {
-				//System.out.println("NEXT");
+				// System.out.println("NEXT");
 				for (int k = i; k <= j; k++) {
 					if (i == 0 && j == 0) { // first iteration, set min segment
 											// product
@@ -18,7 +18,7 @@ public class SolveMethods {
 						segFinish = j;
 					} else {
 						currSegProd *= (long) myArray.getValue(k);
-						//System.out.println(currSegProd);
+						// System.out.println(currSegProd);
 					}
 				}
 				if (currSegProd < minSegProd) {
@@ -30,20 +30,33 @@ public class SolveMethods {
 			}
 
 		}
+
 	}
 
-	public void smart(OneDArray myArray) { // this is bad, needs re writing
+	public void smart(OneDArray myArray) {
 
-		/*
-		 * Criteria: Greatest odd number of negative ints and neighbouring
-		 * positve ints between either: two zeros, a zero and the start a zero
-		 * and the end
-		 * 
-		 * unless, no negative ints, in which case; any segment containing a
-		 * zero or the smallest element if no zeros
-		 */
-		// TODO
+		int n = 0;
+		minSegProd = 1;
+		long d = 1;
+		long g = 1;
 
+		do {
+	
+			if (0 <= myArray.getValue(n)) {
+				
+				n++;
+				minSegProd = Math.min(minSegProd, Math.min((d * myArray.getValue(n)), 1));
+				d = Math.min((d * myArray.getValue(n)), 1);
+				g = Math.max(g * myArray.getValue(n), 1);
+				
+			} else if (myArray.getValue(n) <= 0) {
+				
+				n++;
+				minSegProd = Math.min(minSegProd, Math.min((g * myArray.getValue(n)), 1));
+				d = Math.min((g * myArray.getValue(n)), 1);
+				g = Math.max(d * myArray.getValue(n), 1);
+			}
+		} while (n < myArray.getLength()-1);
 	}
 
 	public void reset() {
@@ -59,6 +72,11 @@ public class SolveMethods {
 
 	public int getSegFinish() {
 		return segFinish;
+	}
+
+	public long getMinSegProd() {
+		return minSegProd;
+
 	}
 
 }

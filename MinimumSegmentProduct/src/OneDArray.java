@@ -32,7 +32,7 @@ public class OneDArray {
 		JOptionPane.showMessageDialog(null, sb);
 	}
 
-	public void showArray(String message, int a, int b, double time) {
+	public void showArray(String message, int a, int b, double time, long minSegProd) {
 		StringBuilder sb = new StringBuilder();
 		for (int i = 0; i < intArray.length; i++) {
 
@@ -53,6 +53,7 @@ public class OneDArray {
 
 		}
 		sb.append("\n\n" + message + "\n Total time: " + time + " seconds.");
+		sb.append("\nMinimum Segment Product is: " + minSegProd);
 		JOptionPane.showMessageDialog(null, sb);
 	}
 
