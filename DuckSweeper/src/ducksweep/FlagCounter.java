@@ -1,7 +1,7 @@
 package ducksweep;
 
 public class FlagCounter {
-	int numFlags;
+	private int numFlags;
 	
 	public FlagCounter () {
 		numFlags = 0;

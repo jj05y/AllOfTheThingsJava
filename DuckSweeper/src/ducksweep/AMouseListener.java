@@ -6,7 +6,7 @@ import javax.swing.SwingUtilities;
 
 public class AMouseListener implements MouseListener {
 
-	DuckSweep game;
+	private DuckSweep game;
 
 	public AMouseListener(DuckSweep ds) {
 		game = ds;

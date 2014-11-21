@@ -15,26 +15,26 @@ public class DuckSweep extends JFrame {
 	// %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 	// Mouse Listener
-	AMouseListener mouseList = new AMouseListener(this);
+	private AMouseListener mouseList = new AMouseListener(this);
 
 	// Flag Counter
-	FlagCounter myFlagCounter = new FlagCounter();
+	private FlagCounter myFlagCounter = new FlagCounter();
 
 	// Arrays of things and the odd button
-	JButton[][] buttons = new JButton[10][10];
-	ImageIcon[] pics = new ImageIcon[16];
-	JLabel[][] picArray = new JLabel[10][10];
-	boolean[][] beenToo = new boolean[picArray.length][picArray[0].length];
-	int[] movesX = { 0, -1, 0, +1, +1, +1, 0, -1, -1 };
-	int[] movesY = { 0, +1, +1, +1, 0, -1, -1, -1, 0 };
-	JButton resetButton;
-	JButton exitButton;
-	JLabel flagCounter;
-	JLabel backGround;
-	JLabel face;
+	private JButton[][] buttons = new JButton[10][10];
+	private ImageIcon[] pics = new ImageIcon[16];
+	private JLabel[][] picArray = new JLabel[10][10];
+	private boolean[][] beenToo = new boolean[picArray.length][picArray[0].length];
+	private int[] movesX = { 0, -1, 0, +1, +1, +1, 0, -1, -1 };
+	private int[] movesY = { 0, +1, +1, +1, 0, -1, -1, -1, 0 };
+	private JButton resetButton;
+	private JButton exitButton;
+	private JLabel flagCounter;
+	private JLabel backGround;
+	private JLabel face;
 
 	// The random object
-	Random rand;
+	private Random rand;
 
 	// %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	// Constructor!
