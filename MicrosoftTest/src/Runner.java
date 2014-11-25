@@ -44,11 +44,11 @@ public class Runner {
 	}
 
 	static boolean test(String str) {
-		boolean isPal = false;
+		boolean isPal = true; 
 
 		for (int i = 0; i < str.length() / 2; i++) {
-			if (str.charAt(i) == str.charAt(str.length() - 1)) {
-				isPal = true;
+			if (str.charAt(i) != str.charAt(str.length() - 1)) {
+				isPal = false;
 			}
 		}
 		return isPal;
