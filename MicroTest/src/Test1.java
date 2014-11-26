@@ -7,7 +7,7 @@
 
 import java.util.ArrayList;
 
-public class Runner {
+public class Test1 {
 
 
 	static int palindrome(String str) {
