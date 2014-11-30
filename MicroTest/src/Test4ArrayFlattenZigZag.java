@@ -30,7 +30,7 @@ public class Test4ArrayFlattenZigZag
 		for (int i = 0; i < oneD.length; i++)
 		{
 			System.out.print(oneD[i] + " ");
-			//output: a,g,m,s,t,n,h,b,c,i,o,u,v,p,j,d,e,k,q,w,x,r,l,f,
+			//output: a g m s t n h b c i o u v p j d e k q w x r l f 
 		}
 		System.out.println();
 		System.out.println();
@@ -44,7 +44,7 @@ public class Test4ArrayFlattenZigZag
 		for (int i = 0; i < oneD.length; i++)
 		{
 			System.out.print(oneD[i] + " ");
-			//output: a,g,m,s,t,n,h,b,c,i,o,u,v,p,j,d,e,k,q,w,x,r,l,f,
+			//output: a g m s t n h b c i o u v p j d e k q w x r l f 
 		}
 
 	}
