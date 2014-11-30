@@ -7,7 +7,7 @@
 
 import java.util.ArrayList;
 
-public class Test1 {
+public class Test1PalindromicSubstrings {
 
 
 	static int palindrome(String str) {
