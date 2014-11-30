@@ -2,7 +2,16 @@
  * Given a 2 dimensional array, the problem was to flatten in into a one dimensional array
  * but following a zig zag pattern throught the columns
  * 
+ * array:
+ * a b c d e f
+ * g h i j k l 
+ * m n o p q r 
+ * s t u v w x
  * 
+ * flattened output:
+ * a g m s t n h b c i o u v p j d e k q w x r l f 
+ *
+ * Two different methods are implemented here,
  */
 public class Test4ArrayFlattenZigZag 
 {
@@ -20,7 +29,7 @@ public class Test4ArrayFlattenZigZag
 
 		for (int i = 0; i < oneD.length; i++)
 		{
-			System.out.print(oneD[i] + ",");
+			System.out.print(oneD[i] + " ");
 			//output: a,g,m,s,t,n,h,b,c,i,o,u,v,p,j,d,e,k,q,w,x,r,l,f,
 		}
 		System.out.println();
@@ -34,7 +43,7 @@ public class Test4ArrayFlattenZigZag
 
 		for (int i = 0; i < oneD.length; i++)
 		{
-			System.out.print(oneD[i] + ",");
+			System.out.print(oneD[i] + " ");
 			//output: a,g,m,s,t,n,h,b,c,i,o,u,v,p,j,d,e,k,q,w,x,r,l,f,
 		}
 
