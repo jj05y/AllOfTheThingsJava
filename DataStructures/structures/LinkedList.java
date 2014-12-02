@@ -135,8 +135,9 @@ public class LinkedList implements List {
 
 	public Object replace(Position p, Object e) {
 		Node n = (Node) p;
+		Object temp = n.element;
 		n.element = e;
-		return e;
+		return temp;
 	}
 
 	public Object remove(Position p) throws ListEmptyException {
