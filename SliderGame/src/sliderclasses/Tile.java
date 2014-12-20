@@ -6,9 +6,8 @@ import javax.swing.JLabel;
 
 public class Tile extends JLabel {
 
-	private static final long serialVersionUID = 1L;
-	static int locations[][] = new int[3][3];
-	static int moves[][] = { { 0, 0 }, { +1, 0 }, { 0, +1 }, { -1, 0 }, { 0, -1 } };
+	private static int locations[][] = new int[3][3];
+	private static int moves[][] = { { 0, 0 }, { +1, 0 }, { 0, +1 }, { -1, 0 }, { 0, -1 } };
 	private int x, y, number;
 
 	Tile(int i) {

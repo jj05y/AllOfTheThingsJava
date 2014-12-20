@@ -9,17 +9,17 @@ import javax.swing.JLabel;
 
 public class Slider extends JFrame {
 
-	Tile[] tiles;
-	Container c;
-	AMouseListener myListener;
-	ImageIcon[] pics;
-	JLabel bg;
-	Tile winner;
-	boolean randomizing;
+	private Tile[] tiles;
+	private Container c;
+	private AMouseListener myListener;
+	private ImageIcon[] pics;
+	private JLabel bg;
+	private Tile winner;
+	private boolean randomizing;
 
 	Slider() {
 		super("Tiles");
-		//System.out.println("game started");
+		// System.out.println("game started");
 
 		myListener = new AMouseListener(this);
 		pics = new ImageIcon[10];
@@ -56,7 +56,9 @@ public class Slider extends JFrame {
 			randomize();
 		} else {
 			t.go();
-			haveIWon();
+			if (!randomizing) {
+				haveIWon();
+			}
 		}
 	}
 
@@ -70,8 +72,8 @@ public class Slider extends JFrame {
 
 		}
 
-		//System.out.println("curent status: " + test);
-		if (test.equals("123456780") && !randomizing) {
+		// System.out.println("curent status: " + test);
+		if (test.equals("123456780")) {
 			for (int i = 0; i < tiles.length; i++) {
 				tiles[i].setVisible(false);
 			}
@@ -80,7 +82,7 @@ public class Slider extends JFrame {
 	}
 
 	private void sortPics() {
-	//	System.out.println("sorting pics");
+		// System.out.println("sorting pics");
 		String fileName;
 
 		bg = new JLabel();
@@ -88,7 +90,7 @@ public class Slider extends JFrame {
 
 		for (int i = 0; i < pics.length; i++) {
 			fileName = ("/" + (i) + ".png");
-			//System.out.println(fileName);
+			// System.out.println(fileName);
 			pics[i] = new ImageIcon(getClass().getResource(fileName));
 			if (i != 0 && i != 9) {
 				tiles[i - 1].setIcon(pics[i]);

@@ -5,7 +5,7 @@ import java.awt.event.MouseListener;
 
 public class AMouseListener implements MouseListener {
 	
-	Slider theGame;
+	private Slider theGame;
 	
 	AMouseListener(Slider tg) {
 		theGame = tg;
