@@ -10,7 +10,6 @@ import javax.swing.JLabel;
 public class Slider extends JFrame {
 
 	private Tile[] tiles;
-	private Container c;
 	private AMouseListener myListener;
 	private ImageIcon[] pics;
 	private JLabel bg;
