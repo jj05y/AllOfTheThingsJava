@@ -110,10 +110,12 @@ public class Slider extends JFrame {
 
 	private void randomize() {
 		randomizing = true;
+		Tile.randomizing = true;
 		Random rand = new Random();
-		for (int i = 0; i < 30000; i++) {
+		for (int i = 0; i < 3000; i++) {
 			tiles[rand.nextInt(8)].go();
 		}
 		randomizing = false;
+		Tile.randomizing = false;
 	}
 }
