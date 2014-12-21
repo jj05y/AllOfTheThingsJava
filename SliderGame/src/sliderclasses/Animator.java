@@ -8,28 +8,18 @@ public class Animator {
 	private int i;
 	private int x;
 	private int y;
-	
-	Animator() {
-		myTimer = new Timer();
 		
-	}
-	
 	private class LoopyStuff extends java.util.TimerTask {
 		public void run() {
-			
 			if (i == 25) {
 				myTimer.cancel();
-
 			}
-			
 			myTile.setLocation(myTile.getX() + x*2, myTile.getY() + y*2);
 			i++;
-			
-
 		}
-		
-		
 	}
+	
+	///////////////////////////////////////////////////////////////////////////////////////////////////
 	
 	public void animate(Tile t, int x1, int y1) {
 		myTile = t;
@@ -38,7 +28,5 @@ public class Animator {
 		y = y1;
 		myTimer = new Timer();
 		myTimer.schedule(new LoopyStuff(), 0, 2 ); 
-		
 	}
-	
 }
